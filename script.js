@@ -1,21 +1,16 @@
 //NUMBER RGB
-function random_rgba() {
-    var x;
-    r= Math.floor((Math.random() * 100) + 0);
-    g= Math.floor((Math.random() * 100) + 0);
-    v= Math.floor((Math.random() * 100) + 0);
+export function generateRandomColor() {
     
     var obj = {
-        R:  r,
-        G: g,
-        B: v
+        r: Math.floor((Math.random() * 255) + 0),
+        g: Math.floor((Math.random() * 255) + 0),
+        b: Math.floor((Math.random() * 255) + 0),
       };
       return obj;
 }
 
 //FILTER NEGATIVE NUMBERS
-array=[-1,-2,-3,0,1,-6]
-function filterNegativeNumbers(array_negative) {
+export function filterNegativeNumbers(array_negative) {
 const array_positive=[];
     array_for_filter=array_negative;
     cont=0;
@@ -28,7 +23,7 @@ const array_positive=[];
     return array_positive;
 }
 
-function functionalfilterNegativeNumbers(array_negative) {
+export function functionalfilterNegativeNumbers(array_negative) {
     array_for_filter=array_negative;
     var number_of_condition = function(valor) {
         return valor >= 0;
@@ -38,7 +33,7 @@ function functionalfilterNegativeNumbers(array_negative) {
 }
 
 //MAP NUMBERS TO STRING
-function mapNumbersIntoStrings(array_negative) {
+export function mapNumbersIntoStrings(array_negative) {
     const array_positive=[];
     for(i=0; i < array_negative.length; i++){
         array_positive[i]=array_negative[i].toString();
@@ -48,8 +43,7 @@ function mapNumbersIntoStrings(array_negative) {
 }
 
 //PALINDROME
-palindrome="anitalavalatina";
-function isPalindrome(palin){
+export function isPalindrome(palin){
 
     var removeChar = palin.replace(/[^A-Z0-9]/ig, "").toLowerCase();
     var checkPalindrome = removeChar.split('').reverse().join('');
@@ -63,7 +57,7 @@ function isPalindrome(palin){
 }
 
 //CLASS PERSON
-class Person {
+export class Person {
     
       constructor(name, age) {
         this.name = name;
@@ -81,11 +75,10 @@ class Person {
 }
 const student = new Person('John', 25);
 
-function printOutPersonAge(student){
+export function printOutPersonAge(student){
     return student.printAge();
 }
 
-console.log(printOutPersonAge(student));
 
 
 
