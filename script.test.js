@@ -1,5 +1,6 @@
 import {
-    generateRandomColor
+    generateRandomColor,
+    filterNegativeNumbers
 } from './script.js';
 
 describe('generateRandomColor', () => {
@@ -9,5 +10,13 @@ describe('generateRandomColor', () => {
             g: expect.any(Number),
             b: expect.any(Number)
         }));
+    });
+});
+
+describe('filterNegativeNumbers', () => {
+    it('should return a new array without negative numbers', () => {
+        const arr = [-4,-8,-9,-7];
+        expect(filterNegativeNumbers(arr)).toEqual([]);
+        expect(filterNegativeNumbers([0])).toEqual([0]);
     });
 });

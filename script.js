@@ -12,9 +12,9 @@ export function generateRandomColor() {
 //FILTER NEGATIVE NUMBERS
 export function filterNegativeNumbers(array_negative) {
 const array_positive=[];
-    array_for_filter=array_negative;
-    cont=0;
-    for (i = 0; i < array_for_filter.length; i++) { 
+    var array_for_filter=array_negative;
+    var cont=0;
+    for (var i = 0; i < array_for_filter.length; i++) { 
         if (array_for_filter[i] >= 0) {
             array_positive[cont]= array_for_filter[i];
             cont=cont+1;
@@ -23,7 +23,7 @@ const array_positive=[];
     return array_positive;
 }
 
-export function functionalfilterNegativeNumbers(array_negative) {
+export function functionalFilterNegativeNumbers(array_negative) {
     array_for_filter=array_negative;
     var number_of_condition = function(valor) {
         return valor >= 0;
